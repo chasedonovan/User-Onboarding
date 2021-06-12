@@ -1,4 +1,3 @@
-import cy from "cypress"
 
 describe('Go to the site', () => {
   it('can navigate to site', () => {
@@ -15,28 +14,28 @@ describe('Can fill out form', () => {
   it('can type first name', () => {
     cy.get('input[name="fname"]')
     .type('Don')
-    .should('have value', 'Don')
+    .should('have.value', 'Don')
   });
   it('can type last name', () => {
     cy.get('input[name="lname"]')
     .type('Doodle')
-    .should('have value', 'Doodle')
+    .should('have.value', 'Doodle')
   });
   it('can type email', () => {
     cy.get('input[name="email"]')
     .type('don@doodle.com')
-    .should('have value', 'don@doodle.com')
+    .should('have.value', 'don@doodle.com')
   });
   it('can type password', () => {
     cy.get('input[name="password"]')
     .type('123doodle')
-    .should('have value', '123doodle')
+    .should('have.value', '123doodle')
   });
 });
 describe('Check the checkbox', () => {
   it('checkbox is checked', () => {
     cy.get('input[name="terms"]')
-      .not("[disabled")
+      .not("[disabled]")
       .check()
       .should("be.checked")
   });
